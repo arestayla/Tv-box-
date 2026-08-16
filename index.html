@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,17 +13,26 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    background: #0b0f16;
+    background: #080b11;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* =========================
+   CABECERA
+========================= */
+
 header {
-    background: linear-gradient(135deg, #0066ff, #702cff);
-    padding: 35px 20px;
+    background: linear-gradient(135deg, #005eff, #742cff);
+    padding: 30px 25px;
     text-align: center;
+    box-shadow: 0 4px 25px rgba(0,0,0,.4);
 }
 
 header h1 {
@@ -32,95 +42,200 @@ header h1 {
 
 header p {
     margin: 10px 0 0;
-    font-size: 19px;
-    color: #e5e5e5;
+    font-size: 18px;
+    color: #e7e7e7;
 }
+
+/* =========================
+   BUSCADOR
+========================= */
+
+.buscador {
+    max-width: 850px;
+    margin: 25px auto 10px;
+    padding: 0 20px;
+}
+
+#buscar {
+    width: 100%;
+    padding: 18px 22px;
+    border-radius: 12px;
+    border: 3px solid #303947;
+
+    background: #161c25;
+    color: white;
+
+    font-size: 20px;
+    outline: none;
+}
+
+#buscar:focus {
+    border-color: #1683ff;
+    box-shadow: 0 0 20px rgba(22,131,255,.35);
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
 
 .contenedor {
     max-width: 1100px;
     margin: auto;
-    padding: 25px;
+    padding: 10px 25px 50px;
 }
+
+/* =========================
+   CATEGORIAS
+========================= */
 
 .categoria {
-    color: #4da3ff;
+    color: #55a8ff;
+
     font-size: 28px;
     font-weight: bold;
+
     margin-top: 35px;
     margin-bottom: 18px;
-    border-bottom: 2px solid #26364d;
+
     padding-bottom: 10px;
+
+    border-bottom: 2px solid #273448;
 }
 
+/* =========================
+   TARJETAS
+========================= */
+
 .app {
-    background: #161c25;
+    background: #151b24;
+
     border: 3px solid transparent;
+
     border-radius: 16px;
+
     padding: 20px;
+
     margin-bottom: 15px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
-    transition: 0.2s;
+    gap: 20px;
+
+    transition: all .18s ease;
 }
 
-.app:focus-within {
+/*
+   ESTA PARTE ES IMPORTANTE
+   PARA EL CONTROL REMOTO
+*/
+
+.app:focus-within,
+.app:hover {
     border-color: white;
+
     background: #242d3a;
-    transform: scale(1.02);
+
+    transform: scale(1.025);
+
+    box-shadow:
+        0 0 25px rgba(0,140,255,.25);
 }
 
 .info {
-    padding-right: 20px;
+    flex: 1;
 }
 
 .info h2 {
     margin: 0 0 8px;
+
     font-size: 24px;
 }
 
 .info p {
     margin: 0;
-    color: #a8b1bd;
+
+    color: #aab3c0;
+
     font-size: 17px;
 }
 
+/* =========================
+   BOTON DESCARGAR
+========================= */
+
 .boton {
     display: inline-block;
+
     background: #087cff;
+
     color: white;
 
-    padding: 16px 25px;
+    padding: 17px 28px;
 
-    border-radius: 10px;
+    border-radius: 11px;
 
     text-decoration: none;
 
     font-size: 18px;
+
     font-weight: bold;
 
-    min-width: 165px;
+    min-width: 175px;
 
     text-align: center;
+
+    border: 3px solid transparent;
 }
 
 .boton:hover,
 .boton:focus {
     background: #00a2ff;
-    outline: 4px solid white;
+
+    border-color: white;
+
+    outline: none;
+
+    box-shadow:
+        0 0 20px rgba(0,162,255,.6);
 }
+
+/* =========================
+   RESULTADOS
+========================= */
+
+#sinResultados {
+    display: none;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+    color: #929aaa;
+
+    font-size: 22px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     text-align: center;
+
     color: #68717c;
+
     padding: 40px;
+
     font-size: 14px;
 }
 
-
-/* Celulares */
+/* =========================
+   CELULAR
+========================= */
 
 @media (max-width: 650px) {
 
@@ -130,12 +245,41 @@ footer {
 
     .app {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 18px;
+
+        align-items: stretch;
     }
 
     .boton {
         width: 100%;
+    }
+
+}
+
+/* =========================
+   TV
+========================= */
+
+@media (min-width: 1200px) {
+
+    .contenedor {
+        max-width: 1200px;
+    }
+
+    .app {
+        padding: 25px;
+    }
+
+    .info h2 {
+        font-size: 27px;
+    }
+
+    .info p {
+        font-size: 19px;
+    }
+
+    .boton {
+        font-size: 20px;
+        padding: 19px 32px;
     }
 
 }
@@ -160,20 +304,31 @@ footer {
 
 
 
+<div class="buscador">
+
+    <input
+        id="buscar"
+        type="text"
+        placeholder="🔍 Buscar aplicación..."
+        autocomplete="off"
+    >
+
+</div>
+
+
+
 <div class="contenedor">
 
 
-
-<!-- ===================================== -->
-<!-- TV EN VIVO - PELICULAS Y SERIES -->
-<!-- ===================================== -->
+<!-- =====================================
+     TV EN VIVO
+===================================== -->
 
 <div class="categoria">
 
 📺 TV EN VIVO - PELÍCULAS Y SERIES
 
 </div>
-
 
 
 <div class="app">
@@ -188,8 +343,9 @@ footer {
 
     </div>
 
-    <a class="boton"
-       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/Xuper.Hydra.HDR.4KP.apk">
+    <a
+        class="boton"
+        href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/Xuper.Hydra.HDR.4KP.apk">
 
         ⬇ DESCARGAR
 
@@ -211,8 +367,9 @@ footer {
 
     </div>
 
-    <a class="boton"
-       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/OTT.Navigator.v1.7.5.1.Alpha.FileCR.apk">
+    <a
+        class="boton"
+        href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/OTT.Navigator.v1.7.5.1.Alpha.FileCR.apk">
 
         ⬇ DESCARGAR
 
@@ -234,8 +391,9 @@ footer {
 
     </div>
 
-    <a class="boton"
-       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/Magma_v10.apk">
+    <a
+        class="boton"
+        href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/Magma_v10.apk">
 
         ⬇ DESCARGAR
 
@@ -245,9 +403,9 @@ footer {
 
 
 
-<!-- ===================================== -->
-<!-- PELICULAS Y SERIES -->
-<!-- ===================================== -->
+<!-- =====================================
+     PELICULAS
+===================================== -->
 
 <div class="categoria">
 
@@ -269,8 +427,9 @@ footer {
 
     </div>
 
-    <a class="boton"
-       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/Film_Plus_v1.4.5.apk">
+    <a
+        class="boton"
+        href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/Film_Plus_v1.4.5.apk">
 
         ⬇ DESCARGAR
 
@@ -292,8 +451,9 @@ footer {
 
     </div>
 
-    <a class="boton"
-       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/NetMirrorTV.1.0.apk">
+    <a
+        class="boton"
+        href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/NetMirrorTV.1.0.apk">
 
         ⬇ DESCARGAR
 
@@ -303,9 +463,9 @@ footer {
 
 
 
-<!-- ===================================== -->
-<!-- HERRAMIENTAS -->
-<!-- ===================================== -->
+<!-- =====================================
+     HERRAMIENTAS
+===================================== -->
 
 <div class="categoria">
 
@@ -322,13 +482,14 @@ footer {
         <h2>Rethink DNS + Firewall + VPN</h2>
 
         <p>
-            Herramienta de seguridad y VPN
+            Herramientas de seguridad
         </p>
 
     </div>
 
-    <a class="boton"
-       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/Rethink_.DNS.+.Firewall.+.VPN_v0.5.5u_APKPure.1.apk">
+    <a
+        class="boton"
+        href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/Rethink_.DNS.+.Firewall.+.VPN_v0.5.5u_APKPure.1.apk">
 
         ⬇ DESCARGAR
 
@@ -350,8 +511,9 @@ footer {
 
     </div>
 
-    <a class="boton"
-       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/tvquickactions-pro-mod-apk-3-3-0-154.apk">
+    <a
+        class="boton"
+        href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/tvquickactions-pro-mod-apk-3-3-0-154.apk">
 
         ⬇ DESCARGAR
 
@@ -373,8 +535,9 @@ footer {
 
     </div>
 
-    <a class="boton"
-       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/Projectivy_Launcher_v4_54_-_Premium.apk">
+    <a
+        class="boton"
+        href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/Projectivy_Launcher_v4_54_-_Premium.apk">
 
         ⬇ DESCARGAR
 
@@ -384,9 +547,9 @@ footer {
 
 
 
-<!-- ===================================== -->
-<!-- ENTRETENIMIENTO -->
-<!-- ===================================== -->
+<!-- =====================================
+     ENTRETENIMIENTO
+===================================== -->
 
 <div class="categoria">
 
@@ -408,8 +571,9 @@ footer {
 
     </div>
 
-    <a class="boton"
-       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/YouTube.Premium.For.apk">
+    <a
+        class="boton"
+        href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/YouTube.Premium.For.apk">
 
         ⬇ DESCARGAR
 
@@ -417,6 +581,13 @@ footer {
 
 </div>
 
+
+
+<div id="sinResultados">
+
+    ❌ No encontramos esa aplicación.
+
+</div>
 
 
 </div>
@@ -428,6 +599,151 @@ footer {
     TV Box Store © 2026
 
 </footer>
+
+
+
+<script>
+
+/* =====================================
+   BUSCADOR
+===================================== */
+
+const buscador =
+    document.getElementById("buscar");
+
+const aplicaciones =
+    document.querySelectorAll(".app");
+
+const categorias =
+    document.querySelectorAll(".categoria");
+
+const sinResultados =
+    document.getElementById("sinResultados");
+
+
+buscador.addEventListener("input", function() {
+
+    const texto =
+        this.value
+        .toLowerCase()
+        .trim();
+
+    let encontrados = 0;
+
+
+    aplicaciones.forEach(function(app) {
+
+        const contenido =
+            app.innerText.toLowerCase();
+
+        if (contenido.includes(texto)) {
+
+            app.style.display = "flex";
+
+            encontrados++;
+
+        } else {
+
+            app.style.display = "none";
+
+        }
+
+    });
+
+
+    categorias.forEach(function(categoria) {
+
+        let siguiente =
+            categoria.nextElementSibling;
+
+        let tieneAplicacion = false;
+
+
+        while (
+            siguiente &&
+            !siguiente.classList.contains("categoria")
+        ) {
+
+            if (
+                siguiente.classList.contains("app") &&
+                siguiente.style.display !== "none"
+            ) {
+
+                tieneAplicacion = true;
+
+            }
+
+            siguiente =
+                siguiente.nextElementSibling;
+
+        }
+
+
+        categoria.style.display =
+            tieneAplicacion || texto === ""
+            ? "block"
+            : "none";
+
+    });
+
+
+    sinResultados.style.display =
+        encontrados === 0
+        ? "block"
+        : "none";
+
+});
+
+
+
+/* =====================================
+   CONTROL REMOTO
+===================================== */
+
+/*
+   Al abrir la página, el buscador
+   queda seleccionado.
+*/
+
+window.addEventListener("load", function() {
+
+    buscador.focus();
+
+});
+
+
+/*
+   Tecla ESC / BACK
+
+   Si el buscador tiene texto,
+   lo limpiamos primero.
+*/
+
+document.addEventListener("keydown", function(event) {
+
+    if (
+        event.key === "Escape" ||
+        event.key === "Backspace"
+    ) {
+
+        if (
+            document.activeElement === buscador &&
+            buscador.value !== ""
+        ) {
+
+            buscador.value = "";
+
+            buscador.dispatchEvent(
+                new Event("input")
+            );
+
+        }
+
+    }
+
+});
+
+</script>
 
 
 </body>
