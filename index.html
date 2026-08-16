@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TV Box Store</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #0d1117;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: linear-gradient(135deg, #0066ff, #7b2cff);
+    padding: 35px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 38px;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    color: #e5e5e5;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px;
+}
+
+.categoria {
+    color: #4da3ff;
+    font-size: 27px;
+    font-weight: bold;
+    margin: 25px 0 15px;
+}
+
+.app {
+    background: #161b22;
+    border: 3px solid transparent;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: 0.2s;
+}
+
+.app:focus-within {
+    border-color: #ffffff;
+    background: #252c36;
+    transform: scale(1.02);
+}
+
+.info {
+    padding-right: 20px;
+}
+
+.info h2 {
+    margin: 0 0 8px;
+    font-size: 24px;
+}
+
+.info p {
+    margin: 0;
+    color: #9da7b3;
+    font-size: 17px;
+}
+
+.boton {
+    display: inline-block;
+    background: #087cff;
+    color: white;
+    padding: 16px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 150px;
+    text-align: center;
+}
+
+.boton:hover,
+.boton:focus {
+    background: #00a2ff;
+    outline: 4px solid white;
+}
+
+footer {
+    text-align: center;
+    color: #68717c;
+    padding: 35px;
+}
+
+@media (max-width: 650px) {
+    .app {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .boton {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>📺 TV BOX STORE</h1>
+    <p>Biblioteca de aplicaciones</p>
+</header>
+
+<div class="contenedor">
+
+    <div class="categoria">📺 IPTV</div>
+
+    <div class="app">
+        <div class="info">
+            <h2>Aplicación IPTV</h2>
+            <p>Aplicación para TV Box</p>
+        </div>
+
+        <a class="boton"
+           href="AQUI_PONDREMOS_EL_ENLACE_DE_TU_APK">
+            ⬇ DESCARGAR
+        </a>
+    </div>
+
+
+    <div class="categoria">🛠️ HERRAMIENTAS</div>
+
+    <div class="app">
+        <div class="info">
+            <h2>File Manager</h2>
+            <p>Administrador de archivos</p>
+        </div>
+
+        <a class="boton"
+           href="#">
+            ⬇ DESCARGAR
+        </a>
+    </div>
+
+    <div class="app">
+        <div class="info">
+            <h2>Downloader</h2>
+            <p>Herramienta de descarga</p>
+        </div>
+
+        <a class="boton"
+           href="#">
+            ⬇ DESCARGAR
+        </a>
+    </div>
+
+
+    <div class="categoria">🎬 MULTIMEDIA</div>
+
+    <div class="app">
+        <div class="info">
+            <h2>Reproductor</h2>
+            <p>Reproductor multimedia</p>
+        </div>
+
+        <a class="boton"
+           href="#">
+            ⬇ DESCARGAR
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    TV Box Store © 2026
+</footer>
+
+</body>
+</html>
