@@ -3,34 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>TV Box Store</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    background: #0d1117;
+    background: #0b0f16;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-    background: linear-gradient(135deg, #0066ff, #7b2cff);
+    background: linear-gradient(135deg, #0066ff, #702cff);
     padding: 35px 20px;
     text-align: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 38px;
+    font-size: 42px;
 }
 
 header p {
     margin: 10px 0 0;
-    font-size: 18px;
+    font-size: 19px;
     color: #e5e5e5;
 }
 
@@ -42,13 +44,16 @@ header p {
 
 .categoria {
     color: #4da3ff;
-    font-size: 27px;
+    font-size: 28px;
     font-weight: bold;
-    margin: 25px 0 15px;
+    margin-top: 35px;
+    margin-bottom: 18px;
+    border-bottom: 2px solid #26364d;
+    padding-bottom: 10px;
 }
 
 .app {
-    background: #161b22;
+    background: #161c25;
     border: 3px solid transparent;
     border-radius: 16px;
     padding: 20px;
@@ -62,8 +67,8 @@ header p {
 }
 
 .app:focus-within {
-    border-color: #ffffff;
-    background: #252c36;
+    border-color: white;
+    background: #242d3a;
     transform: scale(1.02);
 }
 
@@ -78,7 +83,7 @@ header p {
 
 .info p {
     margin: 0;
-    color: #9da7b3;
+    color: #a8b1bd;
     font-size: 17px;
 }
 
@@ -86,12 +91,18 @@ header p {
     display: inline-block;
     background: #087cff;
     color: white;
+
     padding: 16px 25px;
+
     border-radius: 10px;
+
     text-decoration: none;
+
     font-size: 18px;
     font-weight: bold;
-    min-width: 150px;
+
+    min-width: 165px;
+
     text-align: center;
 }
 
@@ -104,10 +115,19 @@ header p {
 footer {
     text-align: center;
     color: #68717c;
-    padding: 35px;
+    padding: 40px;
+    font-size: 14px;
 }
 
+
+/* Celulares */
+
 @media (max-width: 650px) {
+
+    header h1 {
+        font-size: 32px;
+    }
+
     .app {
         flex-direction: column;
         align-items: flex-start;
@@ -117,80 +137,299 @@ footer {
     .boton {
         width: 100%;
     }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <header>
+
     <h1>📺 TV BOX STORE</h1>
-    <p>Biblioteca de aplicaciones</p>
+
+    <p>
+        Biblioteca de aplicaciones para TV Box
+    </p>
+
 </header>
+
+
 
 <div class="contenedor">
 
-    <div class="categoria">📺 IPTV</div>
-
-    <div class="app">
-        <div class="info">
-            <h2>Xuper Hydra HDR 4K</h2>
-            <p>Aplicación para TV Box</p>
-        </div>
-
-        <a class="boton"
-           href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/Xuper.Hydra.HDR.4KP.apk">
-            ⬇ DESCARGAR
-        </a>
-    </div>
 
 
-    <div class="categoria">🛠️ HERRAMIENTAS</div>
+<!-- ===================================== -->
+<!-- TV EN VIVO - PELICULAS Y SERIES -->
+<!-- ===================================== -->
 
-    <div class="app">
-        <div class="info">
-            <h2>File Manager</h2>
-            <p>Administrador de archivos</p>
-        </div>
+<div class="categoria">
 
-        <a class="boton"
-           href="#">
-            ⬇ DESCARGAR
-        </a>
-    </div>
-
-    <div class="app">
-        <div class="info">
-            <h2>Downloader</h2>
-            <p>Herramienta de descarga</p>
-        </div>
-
-        <a class="boton"
-           href="#">
-            ⬇ DESCARGAR
-        </a>
-    </div>
-
-
-    <div class="categoria">🎬 MULTIMEDIA</div>
-
-    <div class="app">
-        <div class="info">
-            <h2>Reproductor</h2>
-            <p>Reproductor multimedia</p>
-        </div>
-
-        <a class="boton"
-           href="#">
-            ⬇ DESCARGAR
-        </a>
-    </div>
+📺 TV EN VIVO - PELÍCULAS Y SERIES
 
 </div>
 
+
+
+<div class="app">
+
+    <div class="info">
+
+        <h2>Xuper Hydra HDR 4KP</h2>
+
+        <p>
+            Aplicación para TV Box
+        </p>
+
+    </div>
+
+    <a class="boton"
+       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/Xuper.Hydra.HDR.4KP.apk">
+
+        ⬇ DESCARGAR
+
+    </a>
+
+</div>
+
+
+
+<div class="app">
+
+    <div class="info">
+
+        <h2>OTT Navigator</h2>
+
+        <p>
+            TV en vivo - Películas y Series
+        </p>
+
+    </div>
+
+    <a class="boton"
+       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/OTT.Navigator.v1.7.5.1.Alpha.FileCR.apk">
+
+        ⬇ DESCARGAR
+
+    </a>
+
+</div>
+
+
+
+<div class="app">
+
+    <div class="info">
+
+        <h2>Magma</h2>
+
+        <p>
+            TV en vivo - Películas y Series
+        </p>
+
+    </div>
+
+    <a class="boton"
+       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/Magma_v10.apk">
+
+        ⬇ DESCARGAR
+
+    </a>
+
+</div>
+
+
+
+<!-- ===================================== -->
+<!-- PELICULAS Y SERIES -->
+<!-- ===================================== -->
+
+<div class="categoria">
+
+🎬 PELÍCULAS Y SERIES
+
+</div>
+
+
+
+<div class="app">
+
+    <div class="info">
+
+        <h2>Film Plus</h2>
+
+        <p>
+            Películas y Series
+        </p>
+
+    </div>
+
+    <a class="boton"
+       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/Film_Plus_v1.4.5.apk">
+
+        ⬇ DESCARGAR
+
+    </a>
+
+</div>
+
+
+
+<div class="app">
+
+    <div class="info">
+
+        <h2>Net Mirror</h2>
+
+        <p>
+            Películas y Series
+        </p>
+
+    </div>
+
+    <a class="boton"
+       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/NetMirrorTV.1.0.apk">
+
+        ⬇ DESCARGAR
+
+    </a>
+
+</div>
+
+
+
+<!-- ===================================== -->
+<!-- HERRAMIENTAS -->
+<!-- ===================================== -->
+
+<div class="categoria">
+
+🛠️ HERRAMIENTAS
+
+</div>
+
+
+
+<div class="app">
+
+    <div class="info">
+
+        <h2>Rethink DNS + Firewall + VPN</h2>
+
+        <p>
+            Herramienta de seguridad y VPN
+        </p>
+
+    </div>
+
+    <a class="boton"
+       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/Rethink_.DNS.+.Firewall.+.VPN_v0.5.5u_APKPure.1.apk">
+
+        ⬇ DESCARGAR
+
+    </a>
+
+</div>
+
+
+
+<div class="app">
+
+    <div class="info">
+
+        <h2>TvQuickActions</h2>
+
+        <p>
+            Herramientas para TV Box
+        </p>
+
+    </div>
+
+    <a class="boton"
+       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/tvquickactions-pro-mod-apk-3-3-0-154.apk">
+
+        ⬇ DESCARGAR
+
+    </a>
+
+</div>
+
+
+
+<div class="app">
+
+    <div class="info">
+
+        <h2>Projectivy Launcher</h2>
+
+        <p>
+            Launcher para Android TV
+        </p>
+
+    </div>
+
+    <a class="boton"
+       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/Projectivy_Launcher_v4_54_-_Premium.apk">
+
+        ⬇ DESCARGAR
+
+    </a>
+
+</div>
+
+
+
+<!-- ===================================== -->
+<!-- ENTRETENIMIENTO -->
+<!-- ===================================== -->
+
+<div class="categoria">
+
+🎮 ENTRETENIMIENTO
+
+</div>
+
+
+
+<div class="app">
+
+    <div class="info">
+
+        <h2>YouTube Premium</h2>
+
+        <p>
+            Entretenimiento
+        </p>
+
+    </div>
+
+    <a class="boton"
+       href="https://github.com/arestayla/Tv-box-/releases/download/v1.0/YouTube.Premium.For.apk">
+
+        ⬇ DESCARGAR
+
+    </a>
+
+</div>
+
+
+
+</div>
+
+
+
 <footer>
+
     TV Box Store © 2026
+
 </footer>
 
+
 </body>
+
 </html>
